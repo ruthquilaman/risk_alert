@@ -1,0 +1,13 @@
+services:
+  - type: cron
+    name: risk-alerts-job
+    env: python
+    plan: free
+    schedule: "0 2 * * *"
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python risk_alerts.py"
+    envVars:
+      - key: PLUTTO_API_KEY
+        sync: false
+      - key: SLACK_WEBHOOK_URL
+        sync: false
