@@ -5,6 +5,11 @@ on:
     - cron: '0 2 * * *'  # Todos los días a las 2 AM UTC
   workflow_dispatch:
 
+permissions:
+  contents: read
+  actions: write
+
+
 jobs:
   run-risk-check:
     runs-on: ubuntu-latest
